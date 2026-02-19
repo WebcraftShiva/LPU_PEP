@@ -24,3 +24,9 @@ app.get("/dice", (req, res) => {
 
   res.render("dice.ejs", { diceVal });
 });
+
+app.get("/luckyNumber", (req, res) => {
+  let diceVal = Math.floor(Math.random() * 6 + 1);
+
+  res.render("luckyNumber.ejs");
+});

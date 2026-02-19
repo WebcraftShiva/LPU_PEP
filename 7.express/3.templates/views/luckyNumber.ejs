@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucky Number</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+        }
+
+        .card {
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            text-align: center;
+            width: 400px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 0.6s ease-in-out;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .number {
+            font-size: 70px;
+            font-weight: bold;
+            margin: 20px 0;
+            color: #6366f1;
+        }
+
+        .success {
+            color: #16a34a;
+            font-size: 20px;
+            margin-top: 10px;
+        }
+
+        .fail {
+            color: #dc2626;
+            font-size: 20px;
+            margin-top: 10px;
+        }
+
+        img {
+            margin-top: 20px;
+            width: 200px;
+            border-radius: 12px;
+        }
+
+        .btn {
+            margin-top: 25px;
+            padding: 10px 25px;
+            background: #6366f1;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #4f46e5;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+        <h1>🍀 My Lucky Number</h1>
+
+        <% let randomNumber=Math.floor(Math.random()*10 +1); %>
+
+            <div class="number">
+                <%= randomNumber %>
+            </div>
+
+            <% if(randomNumber==3){ %>
+                <div class="success">🎉 It's Your Lucky Number!</div>
+                <img
+                    src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExNGdvOHpiNWRsbmRjcmxxazZ3NDNqYmZlZ2o0MHV2cXNlZ3k2amtocCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/hryis7A55UXZNCUTNA/giphy.gif">
+                <% } else { %>
+                    <div class="fail">😥 Not your lucky day! Try again.</div>
+                    <% } %>
+
+    </div>
+
+</body>
+
+</html>
